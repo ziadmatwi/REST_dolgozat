@@ -14,7 +14,7 @@ export default class Kerdes{
         
         this.#sor = sor;
         this.megjelenit()
-        console.log(this.#sor)
+        
         
 
         
@@ -26,14 +26,17 @@ export default class Kerdes{
     megjelenit(){
         let mondat = this.#obj.mondat.split("_")
         let html = "";
-        console.log(this.#sor);
-       
+        
+        
         html += `
-        <div class="col-md-6 border border-secondary rounded p-2 "><span>${mondat[0]}</span><input type="text"><span>${mondat[1]} (${this.#obj.alap})</span></div>
-        `
+        <div class="col-md-6 border border-secondary rounded p-4 class="a${this.#index}" ><span>${mondat[0]}</span><input id="${this.#index}" type="text"><span>${mondat[1]} (${this.#obj.alap})</span></div>
+         `
       
         this.#szElem.insertAdjacentHTML("beforeend",html)
     }
+
+
+    
 
 
 

@@ -15,6 +15,7 @@ export default class Kerdesek{
         this.alcimMegjelenit();
         this.keveres()
         this.megjelenit();
+        this.ellenorzes();
 
     }
 
@@ -64,6 +65,22 @@ export default class Kerdesek{
             
             
         }
+    }
+
+    ellenorzes(){
+        for (let index = 0; index < this.#kerdesek.length; index++) {
+            document.getElementById(`${index}`).addEventListener("input",(e) =>{
+                
+                if(e.target.value === this.#kerdesek[index].valasztas[0]){
+                    document.querySelector(`.a${index}`).insertAdjacentHTML("beforeend","<span style='color: green;'>✔</span>")
+                    console.log("helyes")
+                }
+            })
+            
+        }
+
+
+
     }
 
 
